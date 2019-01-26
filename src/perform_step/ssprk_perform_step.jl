@@ -843,7 +843,6 @@ end
   @unpack t,dt,uprev,u,f,p = integrator
   @unpack k,fsalfirst,u_1,u_2,stage_limiter!,step_limiter! = cache
 
-  println(cache.fsalfirst)
   if cache.step < 3
     @. u = uprev + dt*fsalfirst
     stage_limiter!(u, f, t+dt)
